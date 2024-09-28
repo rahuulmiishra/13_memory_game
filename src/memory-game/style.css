@@ -1,0 +1,59 @@
+.memory-game {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100vh;
+  flex-wrap: wrap;
+  width: 70vw;
+}
+
+.card {
+  height: 70px;
+  width: 100px;
+  border-radius: 4px;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px;
+  position: relative;
+  transition: transform 0.5s;
+  background-color: lightseagreen;
+  transform-style: preserve-3d;
+}
+
+.front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: lightcoral;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1;
+  backface-visibility: hidden;
+}
+
+.back {
+  position: absolute;
+  height: 100%;
+  background-color: lightgoldenrodyellow;
+  width: 100%;
+  font-size: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card[data-toggle="true"] {
+  transform: rotateY(180deg);
+}
+
+.card[data-active="true"] {
+  transform: rotateY(180deg);
+}
+.card[data-disable-all="true"],
+.card[data-disabled="true"] {
+  pointer-events: none;
+}
